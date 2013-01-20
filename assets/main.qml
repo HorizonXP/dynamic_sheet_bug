@@ -25,8 +25,8 @@ NavigationPane {
         Tart.send('uiReady');
 
         updateLabelText.connect(mainPage.updateLabelText);
-        appMenu.connect(handleTriggerSettingsPage);
-        appMenu.connect(handleTriggerHelpPage);
+        appMenu.triggerSettingsPage.connect(handleTriggerSettingsPage);
+        appMenu.triggerHelpPage.connect(handleTriggerHelpPage);
     }
 
     onPopTransitionEnded: {
