@@ -9,7 +9,7 @@ for f in *.pyc; do mv $f `basename $f .cpython-32.pyc`.pyc; done
 cd ..
 
 TART=blackberry-py/tart
-blackberry-nativepackager -package bbpybootstrap-release.bar \
+blackberry-nativepackager -package dyntest-release.bar \
     -configuration Device-Release \
     -target bar \
     -env PYTHONPATH=app/native \

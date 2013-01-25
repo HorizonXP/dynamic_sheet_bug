@@ -1,20 +1,35 @@
 import bb.cascades 1.0
-import "../tart.js" as Tart
 
 Page {
-    signal updateLabelText(string text)
+    signal openDynamicSheet();
+    signal changeDestroy(bool checked);
 
     Container {
         layout: DockLayout {}
 
-        Label {
-            id: label
+        Container {
             horizontalAlignment: HorizontalAlignment.Center
             verticalAlignment: VerticalAlignment.Center
-        }
-    }
+            layout: StackLayout{ 
+                orientation: LayoutOrientation.TopToBottom
+            }
+            Button {
+                id: button
+                text: "Click to open sheet."
 
-    onUpdateLabelText: {
-        label.text = text;
+                onClicked: {
+                    openDynamicSheet();
+                }
+            }
+
+            CheckBox {
+                text: "Destroy?"
+
+                onCheckedChanged: {
+                    console.log("checkbox", checked);
+                    changeDestroy(checked);
+                }
+            }
+        }
     }
 }

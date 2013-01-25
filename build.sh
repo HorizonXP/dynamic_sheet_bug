@@ -1,6 +1,6 @@
 #!/bin/bash
 TART=blackberry-py/tart
-blackberry-nativepackager -package bbpybootstrap-debug.bar \
+blackberry-nativepackager -package dyntest-debug.bar \
     -configuration Device-Debug \
     -devMode \
     -target bar \
